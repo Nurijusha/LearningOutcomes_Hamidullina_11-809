@@ -1,0 +1,19 @@
+Flask==2.1.1
+
+# Module parser
+cdmpyparser==3.3.2
+
+# Work with git
+GitPython==3.1.27
+
+# Objects serialization
+marshmallow==3.15.0
+
+# Running server
+gunicorn==20.1.0
+
+# Calculate maintainability index
+radon==5.1.0
+
+# Code style and duplicates
+pylint==2.13.9

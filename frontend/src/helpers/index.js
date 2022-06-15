@@ -1,0 +1,1 @@
+export const getScore = (score) => (5 * score[5] + 4 * score[4] + 3 * score[3] + 2 * score[2]) / Object.values(score).reduce((ac, sc) => ac + sc);

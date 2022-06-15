@@ -1,0 +1,28 @@
+# Django
+asgiref==3.5.0
+Django==4.0.4
+sqlparse==0.4.2
+
+# drf
+djangorestframework==3.13.1
+
+# Registration and auth
+djoser==2.1.0
+
+# For working with environments
+django-environ==0.8.1
+
+# Auto generate docs from drf api
+drf-yasg==1.20.0
+
+# Worker
+celery==5.2.6
+
+# Broker
+redis==4.2.2
+
+# DB
+psycopg2==2.9.3
+
+# Running server
+gunicorn==20.1.0

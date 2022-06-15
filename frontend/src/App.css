@@ -1,0 +1,252 @@
+.App {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #F2D7C8;
+}
+
+.icon {
+  position: absolute;
+  left: 26px;
+  top: 3px;
+  height: 62px;
+  border: 1px solid darkgrey;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.headerTitle {
+  position: absolute;
+  left: 106px;
+  top: 0px;
+  font-size: 21px;
+  color: #547FA6;
+}
+
+.headerButtom {
+  padding-right: 34px;
+  color: #547FA6;
+  cursor: pointer;
+}
+
+.select_menu {
+  position: absolute;
+  top: 56px;
+  background: #F9F8F7;
+  border: 1px solid #547FA6;
+  border-radius: 20px;
+  width: 210px;
+  z-index: 1000;
+}
+
+.select_item {
+  height: 49px;
+  display: flex;
+  align-items: center;
+  padding-left: 18px;
+  color: #547FA6;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.select_item:first-child {
+  border-bottom: 1px solid #547FA6;
+}
+
+.authBlockButton {
+  padding-top: 20px;
+  /*position: absolute;
+  bottom: 40px;*/
+}
+
+.contentCenter {
+  padding-top: 50px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: #547FA6;
+}
+ 
+.authBlock {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+  height: 400px;
+  background: rgba(250, 250, 250, 0.71);
+  border: 1px solid #E3E2E3;
+  border-radius: 20px;
+  padding: 50px;
+}
+
+.header {
+  top: 0;
+  position: absolute;
+  display: flex;
+  justify-content: right;
+  padding: 10px;
+  margin-right: 20px;
+  background: #F6F6F6;
+  width: 100%;
+  height: 50px;
+}
+
+.main {
+  padding: 20px;
+  background: rgba(250, 250, 250, 0.71);
+  border: 1px solid #E3E2E3;
+  border-radius: 20px;
+  min-width: 430px;
+  height: fit-content;
+  height: 100%;
+}
+
+.topics {
+  position: absolute;
+  overflow: scroll;
+  top: 100px;
+  left: 100px;
+  width: 40%;
+  height: min-content;
+  min-height: 200px;
+  max-height: 70%;
+}
+
+.checkUrl {
+  position: absolute;
+  top: 40%;
+  right: 100px;
+  display: flex;
+  width: 300px;
+  height: 260px;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.loaderScreen {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(256, 256, 256, 0.5);
+  z-index: 1;
+}
+
+.solution {
+  position: relative;
+  padding: 20px;
+  background: rgba(250, 250, 250, 0.71);
+  border: 1px solid #E3E2E3;
+  border-radius: 20px;
+  width: 90%;
+  height: 80%;
+  margin: 19px;
+  min-height: 490px;
+  overflow-y: scroll;
+}
+
+
+td {
+  border: 1px solid rgba(224, 224, 224, 1);
+}
+
+.score {
+  font-size: 32px;
+  /* padding-top: 6%; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.score2 {
+  position: relative;
+  font-size: 32px;
+}
+
+.buttonBack {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+
+.url {
+  position: absolute;
+  bottom: 15px;
+}
+
+.sendEmail {
+  height: 200px;
+}
+
+.block {
+  position: relative;
+  width: 20%;
+  max-height: 272px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  border: 1px solid #547FA6;
+}
+
+.block3 {
+  position: relative;
+  width: 30%;
+  max-height: 272px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border: 1px solid #547FA6;
+}
+
+.block3 canvas {
+  max-height: 170px;
+}
+
+.block2 {
+  width: 643px;
+  max-height: 272px;
+  padding: 10px 19px;
+  background: white;
+  border: 1px solid #547FA6;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.pie {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.score3 {
+  font-size: 18px;
+  position: absolute;
+  right: -80%;
+  bottom: -40%;
+}
+
+.tooltip {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-bottom: 35px;
+  height: 25%;
+  min-height: 200px;
+}

@@ -1,0 +1,91 @@
+version: '3.3'
+services:
+  db:
+    image: postgres:latest
+    restart: always
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    env_file:
+      - .env
+
+  redis:
+    image: redis
+    restart: always
+
+  web:
+    restart: always
+    build:
+      context: ../web
+      dockerfile: Dockerfile
+    volumes:
+      - static_value:/code/static/
+      - media_value:/code/media/
+    depends_on:
+      - db
+    env_file:
+      - .env
+
+  dynamic-tests:
+    build:
+      context: ../dynamic_tests
+      dockerfile: Dockerfile
+    container_name: dynamic-tests
+    command: gunicorn --bind 0.0.0.0:6000 manage:app
+    ports:
+      - "6000:6000"
+    restart: always
+    depends_on:
+      - web
+
+  static-tests:
+    build:
+      context: ../static_tests
+      dockerfile: Dockerfile
+    # in other platforms - Bus error with cdmpyparser
+    platform: linux/amd64
+    container_name: static-tests
+    command: gunicorn --bind 0.0.0.0:6001 manage:app
+    ports:
+      - "6001:6001"
+    restart: always
+    depends_on:
+      - web
+
+  celery:
+    restart: always
+    build:
+      context: ../web
+    env_file:
+      - .env
+    command: celery -A web worker --loglevel=INFO
+    depends_on:
+      - web
+      - redis
+
+  frontend:
+    build:
+      context: ../frontend
+      dockerfile: Dockerfile
+    volumes:
+      - frontend_data:/app/build/
+
+  nginx:
+    image: nginx:1.21.3-alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - frontend_data:/usr/share/nginx/html/
+      - static_value:/code/static/
+      - media_value:/code/media/
+    depends_on:
+      - web
+    links:
+      - dynamic-tests
+      - web
+
+volumes:
+  static_value:
+  media_value:
+  postgres_data:
+  frontend_data:
